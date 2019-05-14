@@ -1,0 +1,66 @@
+<!html>
+<head>
+  <title>Language Generation Tester</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+  <form method="get" action="/">
+    <header>
+      <h1>
+        Language Generation Tester
+      </h1>
+      <p>
+        Preview the <a href="https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/language-generation" target="_new">experimental Bot Framework language generation library</a> 
+        with this interactive tool that will use your LG rules to generate example language.
+        This library is intended for use in generating personalized, contextual responses for bots and other conversational software.
+      </p>
+    </header>
+
+    {{#if error}}
+      <div class="error">
+        {{error}}  
+      </div>
+    {{/if}}
+
+     <div class="panes">
+       <div>
+
+        <p>
+          <label for="lg">LG rules <a href="https://github.com/microsoft/BotBuilder-Samples/blob/master/experimental/language-generation/docs/lg-file-format.md" target="_new">follow this format</a></a></label>
+          <textarea id="lg" name="lg" rows="15">{{{lg}}}</textarea>
+        </p>
+        <p>
+          <label for="json">Values used to evaluate expressions (must be valid json)</label>
+          <textarea name="json" rows="15" id="json">{{{pretty_json}}}</textarea>
+        </p>
+      </div>
+      <div>
+        <p>
+          <label for="text">Template Name</label>
+          <input type="text" name="text" id="template" placeholder="The name of a template from the LG file" value="{{{text}}}" onkeypress="document.getElementById('freetext').value='';">
+        </p>
+        <p>
+          <label for="text">Free Text</label>
+          <input type="text" name="freetext" id="freetext" placeholder="Text to evaluate as a template" value="{{{freetext}}}" onkeypress="document.getElementById('template').value='';">
+        </p>
+        <p>
+          <label for="interations">Generate # of variants:</label>
+          <input type="number" name="iterations" value="{{iterations}}">
+        </p>
+
+        <input type="submit" value="Generate">
+
+        <div class="results">
+          <label>Generated Language</label>
+
+          <ol>
+            {{#each results}}
+            <li>{{.}}</li>
+            {{/each}}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>

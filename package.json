@@ -1,0 +1,31 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "hello-express",
+  "version": "0.0.1",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "botbuilder-expression": "https://botbuilder.myget.org/F/botbuilder-declarative/npm/botbuilder-expression/-/botbuilder-expression-4.5.0.tgz",
+    "botbuilder-expression-parser": "https://botbuilder.myget.org/F/botbuilder-declarative/npm/botbuilder-expression-parser/-/botbuilder-expression-parser-4.5.0.tgz",
+    "botbuilder-lg": "https://botbuilder.myget.org/F/botbuilder-declarative/npm/botbuilder-lg/-/botbuilder-lg-4.5.0.tgz",
+    "express": "^4.16.4",
+    "express-hbs": "^2.1.1"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/hello-express"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
