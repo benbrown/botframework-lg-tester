@@ -1,0 +1,17 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Thing a"
+    },
+    {
+      "id": 2,
+      "name": "Thing b"
+    },
+    {
+      "id": 3,
+      "name": "Thing c"
+    }
+  ],
+  "name": "Chester"
+}

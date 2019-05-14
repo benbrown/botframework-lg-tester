@@ -1,0 +1,38 @@
+> This is the language generation ruleset
+> A template looks like this:
+> # template
+> Templates contain 1 or more version of text, and can also contain { expressions } and [other templates].
+
+# order
+- [cart]. [thanks], [personalize]. Your cart includes [nicelist(items)].
+
+# cart
+- You have {count(items)} [pluralize(count(items),'item','items')]
+- There [pluralize(count(items),'is','are')] {count(items)} [pluralize(count(items),'item','items')]
+
+# thanks
+- thanks
+- thank you
+- thx
+
+> this is a helper that greets the user with their name, but falls back to generics
+# personalize
+- IF: {exists(name)}
+  - {name}
+- ELSE:
+  - human
+  - person
+  - user
+
+> this is a helper that pluralizes things
+# pluralize (number, singular, plural) 
+- IF: { number == 1}
+   - {singular}
+- ELSE: 
+   - {plural}
+
+# nicelist(list)
+- IF: { count(list) == 1 }
+ - { list[0].name }
+- ELSE: 
+  - { join(foreach(list, item, item.name), ",", "and") }
